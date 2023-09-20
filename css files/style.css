@@ -1,0 +1,360 @@
+:root {
+    --dark-color: #19283F;
+    --red-color: #dc3545;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --blue-sky: #33D1CC;
+    --section-blue-light: #EFF7FA;
+    --yellow-color: #ffc400;
+    --section-padding: 5rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* =============================================start Components==================================== */
+div.main-title p {
+    font-weight: 500;
+}
+
+div.main-title p:first-of-type:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--blue-sky,#33D1CC);
+    width: 7.5rem;
+    height: 0.125rem;
+}
+/* =============================================End Components==================================== */
+
+
+/* =============================================start navbar==================================== */
+.navbar {
+    background-color: var(--dark-color,#19283F);
+}
+
+nav.navbar i.fa-bars {
+    color: var(--color-white,#ffffff);
+    font-size: 1.75rem;
+}
+
+nav.navbar button.navbar-toggler {
+    outline: 0.125rem solid var(--white-color,#ffffff)!important;
+    box-shadow: none;
+}
+
+nav.navbar button.navbar-toggler:focus {
+    outline: 0.125rem solid var(--white-color,#ffffff)!important;
+    box-shadow: none;
+}
+
+nav.navbar button.navbar-toggler[aria-expanded="true"] {
+    outline: 0.125rem solid var(--blue-sky,#33D1CC)!important;
+}
+
+.navbar li a {
+    color: var(--white-color,#ffffff);
+}
+
+.navbar ul.navbar-nav li a.nav-link.active,
+.navbar ul.navbar-nav li a.nav-link:hover,
+.navbar ul.navbar-nav li a.nav-link:focus
+ {
+    color: var(--blue-sky,#33D1CC);
+}
+
+nav.navbar .search {
+    border-left: 0.125rem solid var(--blue-sky,#33D1CC);
+}
+
+nav.navbar .search i.fa-solid.fa-magnifying-glass {
+    color: var(--blue-sky,#33D1CC);
+    padding-left: 0.1875rem;
+    
+}
+
+nav.navbar button.btn-login {
+    width: fit-content;
+}
+
+/* =============================================End navbar==================================== */
+/* =============================================start Landing==================================== */
+.landing {
+    height: calc(100vh - 4.875rem);
+    background-color: var(--dark-color,#19283F);
+}
+
+.landing > div {
+    padding: 0 0.94rem;
+    max-width: 90%;
+}
+
+.landing > div h2 {
+    font-size: 2.5rem;
+    letter-spacing: 0.0625rem;
+    font-weight: 500;
+    margin-top: -1.25rem;
+}
+
+.landing > div p {
+    font-weight: bold;
+    letter-spacing: 0.0625rem;
+}
+
+.landing > div button.btn-danger {
+    font-weight: 500;
+}
+
+
+/* =============================================End Landing==================================== */
+/* =============================================Start Features================================= */
+.features {
+    padding-top: var(--section-padding,5rem);
+}
+
+/* style columns */
+.features .row {
+    margin-top: calc(var(--section-padding,5rem) - 1.875rem);
+}
+
+@media (max-width: 768px) {
+    .features .row > div {
+        margin-bottom: 1.25rem;
+    }
+    
+}
+
+.features .row > div div:first-child {
+    width: 12.5rem;
+    height: 12.5rem;
+}
+.features .row > div i {
+    font-size: 3.75rem;
+    color: var(--blue-sky,#33D1CC);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.features .row > div span {
+    color: var(--section-blue-light,#EFF7FA);
+    bottom: -4.0625rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13.75rem;
+}
+
+.features .row > div h4 {
+    color: var(--yellow-color,#ffc400);
+    margin-bottom: 1.25rem;
+}
+
+.features .row > div p {
+    font-weight: 500;
+}
+/* =============================================End Features=================================== */
+/* =============================================Start Services=================================== */
+.services {
+    padding: var(--section-padding,5rem) 0;
+    background-color: var(--section-blue-light,#EFF7FA);
+}
+
+.services ul.nav li.nav-item.active {
+    color: var(--red-color,#dc3545);
+}
+
+@media (min-width: 576px) {
+    .services ul.nav li.nav-item.active {
+        background-color: var(--red-color,#dc3545);
+        border-radius: 30px;
+        color: var(--yellow-color,#ffc400);
+    }
+}
+
+.services ul.nav li.nav-item:hover {
+    color: var(--red-color,#dc3545);
+    cursor: pointer;
+}
+
+
+@media (min-width: 768px) {
+    .services ul.nav li.nav-item.active:hover {
+        color: var(--yellow-color,#ffc400);
+        opacity: 0.7;
+    }
+}
+
+.services div.row {
+    row-gap: 20px;
+}
+
+.services .row .box {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.services .row .box::before {
+    content: attr(data-work);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: #33d1ccab;
+    color: white;
+    z-index: 2;
+    transition: 0.3s linear;
+    transform: translate(calc(-100% - 4px));
+}
+
+.services .row .box:hover::before {
+    transform: translate(0);
+    cursor: pointer;
+}
+
+/* =============================================End Services=================================== */
+/* =============================================Start About==================================== */
+.about {
+    padding-top: var(--section-padding,5rem);
+    padding-bottom: var(--section-padding,5rem);
+}
+
+.about .container .main-title p:last-of-type {
+    width: 500px;
+    max-width: 100%;
+}
+
+.about .container p {
+    font-weight: 500;
+}
+/* =============================================End About====================================== */
+/* =============================================Start Team====================================== */
+.team {
+    padding-top: var(--section-padding,5rem);
+    padding-bottom: var(--section-padding,5rem);
+    background-color: var(--section-blue-light,#EFF7FA);
+}
+
+.team .container > div:first-child h2 {
+    color: var(--yellow-color,#ffc400);
+}
+
+.team .container > div:first-child h2 + p {
+    font-weight: 500;
+}
+
+.team .container .row .img-con div {
+    background-color: var(--blue-sky,#33D1CC);
+}
+
+.team .container .row q {
+    font-weight: 500;
+}
+/* =============================================End Team====================================== */
+/* =============================================Start Sponsar====================================== */
+.sponsor {
+    padding-top: calc(var(--section-padding,5rem) - 1rem);
+    padding-bottom: calc(var(--section-padding,5rem) - 1rem);
+}
+
+.sponsor .container .row {
+    row-gap: 1.875rem;
+}
+/* =============================================End Sponsar====================================== */
+/* =============================================Start sec-start-now==================================== */
+.startNow {
+    padding-top: var(--section-padding,5rem);
+    padding-bottom: var(--section-padding,5rem);
+    background-color: var(--dark-color,#19283F);
+    letter-spacing: 0.0625rem;
+}
+
+.startNow p {
+    font-size: 0.9375rem;
+}
+/* =============================================End sec-start-now====================================== */
+/* =============================================Start Blog====================================== */
+.blog {
+    padding-top: var(--section-padding,5rem);
+    padding-bottom: var(--section-padding,5rem);
+}
+
+.blog .row {
+    row-gap: 2.5rem;
+}
+/* =============================================End Blog====================================== */
+/* =============================================Start Subscribe==================================== */
+.subscribe {
+    padding-top: calc(var(--section-padding,5rem) - 2rem);
+    padding-bottom: calc(var(--section-padding,5rem) - 2rem);
+    background-color: var(--yellow-color,#ffc400);
+}
+
+.subscribe .container button.btn {
+    background-color: var(--dark-color,#19283F);
+}
+
+.subscribe .container .row input {
+    width: 100%;
+    border-bottom: 1px solid var(--white-color,#ffffff)!important;
+    caret-color: var(--white-color,#ffffff);
+}
+
+.subscribe .container .row input::placeholder {
+    color: var(--color-white,#ffffff);
+}
+
+.subscribe .container .row input:focus {
+    border: none;
+    outline: none;
+}
+/* =============================================End Subscribe====================================== */
+/* =============================================Start Footer====================================== */
+footer {
+    padding-top: var(--section-padding,5rem);
+    padding-bottom: var(--section-padding,5rem);
+    background-color: var(--dark-color,#19283F);
+}
+
+footer .row {
+    row-gap: 30px;
+}
+
+footer .row p,footer .row li {
+    font-weight: 500;
+}
+
+footer .row span:first-of-type {
+    color: var(--blue-sky,#33D1CC);
+    font-weight: bold;
+}
+
+footer .row span:last-of-type {
+    color: var(--yellow-color,#ffc400);
+    font-weight: bold;
+}
+
+footer .row .icons li {
+    margin-right: 10px;
+}
+
+footer .row .icons li a i {
+    font-size: 18px;
+}
+
+/* =============================================End Footer====================================== */
+
+
